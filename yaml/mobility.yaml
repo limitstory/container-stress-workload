@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mobility
+  labels:
+    app: mobility
+  namespace: mobility
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: mobility
+    image: limitstory/stress_cpu_15:latest
+    imagePullPolicy: Always
+    resources:
+      requests:
+        memory: 1000Mi
+      limits:
+        memory: 1000Mi
+      
